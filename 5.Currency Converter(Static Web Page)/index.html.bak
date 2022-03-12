@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+	</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<a class="navbar-brand">AddSkill</a>
+		</div>
+	</nav>
+	<div class="col-md-3"></div>
+	<div class="col-md-6 well">
+		<h3 class="text-primary"><center>Simple Currency Converter</center></h3>
+		<hr style="border-top:1px dotted #ccc;">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			
+			<hr style="border-top:1px groovy #ccc;"/>
+			<div class="form-group">
+			<h4>Converter:</h4>
+				<select onchange="Currency(); Calculate()" class="form-control" id="converter" style="width:30%;">
+					<option value="Dollar">Dollar</option>
+					<option value="Pound">Pound</option>
+					<option value="Euro">Euro</option>
+					<option value="Dirham">Dirham</option>
+					<option value="Riyal">Riyal</option>
+				</select>
+				<br />
+				<input type="number" oninput="Calculate()" class="form-control" id="value1"/>
+			</div>
+			<br /><br />
+			<div class="form-group">
+				<label>Indian Rupees</label>
+				<input type="number" class="form-control" id="value2" disabled="disabled"/>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	function Currency(){
+		y = document.getElementById("converter").value;
+		return y;
+	}
+	
+	function Calculate(){
+		y = Currency();
+		
+		x = document.getElementById("value1").value;
+		
+		if(x == ""){
+			document.getElementById("value2").value = "";
+		}else{
+			switch(y){
+				case "Dollar":
+					document.getElementById("value2").value = x * 74.72;
+				break;
+				
+				case "Pound":
+					document.getElementById("value2").value = x * 100.81;
+				break;
+				
+				case "Euro":
+					document.getElementById("value2").value = x * 85.33;
+				break;
+				
+				case "Dirham":
+					document.getElementById("value2").value = x * 20.34;
+				break;
+				
+				case "Riyal":
+					document.getElementById("value2").value = x * 19.91;
+				break;
+
+/*
+Afghan Afghani	AFN	0.87 INR
+Armenian Dram	AMD	0.15 INR
+Azerbaijani Manat	AZN	43.28 INR
+Bangladeshi Taka	BDT	0.86 INR
+Cambodian Riel	KHR	0.018 INR
+Chinese Yuan	CNY	11.40 INR
+Georgian Lari	GEL	23.58 INR
+Hong Kong Dollar	HKD	9.46 INR
+Indonesian Rupiah	IDR	0.0052 INR
+Japanese Yen	JPY	0.67 INR
+Kazakhstani Tenge	KZT	0.17 INR
+Lao Kip	LAK	0.0077 INR
+Malaysian Ringgit	MYR	17.74 INR
+South Korean Won	KRW	0.063 INR
+Sri Lankan Rupee	LKR	0.37 INR
+Maldivian Rufiyaa	MVR	4.76 INR
+Pakistani Rupee	PKR	0.44 INR
+Philippine Peso	PHP	1.47 INR
+Thai Baht	THB	2.25 INR
+Taiwanese Dollar	TWD	2.66 INR
+Vietnamese Dong	VND	0.0032 INR
+Bahraini Dinar	BHD	195.22 INR
+Emirati Dirham	AED	20.03 INR
+Saudi Arabian Riyal	SAR	19.62 INR
+Omani Rial	OMR	191.10 INR
+Israeli Shekel	ILS	22.96 INR
+Iraqi Dinar	IQD	0.050 INR
+Iranian Rial	IRR	0.0017 INR
+Jordanian Dinar	JOD	103.78 INR
+Kuwaiti Dinar	KWD	244.69 INR
+Lebanese Pound	LBP	0.049 INR
+Qatari Riyal	QAR	20.21 INR
+Libyan Dinar	LYD	16.28 INR
+Bosnian Convertible Marka	BAM	44.50 INR
+Euro	EUR	86.99 INR
+Bulgarian Lev	BGN	44.48 INR
+Czech Koruna	CZK	3.42 INR
+Croatian Kuna	HRK	11.62 INR
+Danish Krone	DKK	11.70 INR
+Hungarian Forint	HUF	0.25 INR
+Icelandic Krona	ISK	0.58 INR
+Moldovan Leu	MDL	4.21 INR
+Macedonian Denar	MKD	1.41 INR
+Norwegian Krone	NOK	8.49 INR
+Polish Zloty	PLN	19.14 INR
+Romanian Leu	RON	17.59 INR
+Serbian Denar	RSD	0.74 INR
+Russian Ruble	RUB	1.01 INR
+Norwegian Krone	NOK	8.49 INR
+Swedish Krona	SEK	8.55 INR
+Swiss Franc	CHF	80.17 INR
+Turkish Lira	TRY	6.71 INR
+Ukranian Hryvnia	UAH	2.75 INR
+British Pound	GBP	101.92 INR
+Argentine Peso	ARS	0.75 INR
+Bolivian Boliviano	BOB	10.66 INR
+Brazilian Real	BRL	13.94 INR
+Chilean Peso	CLP	0.093 INR
+Colombian Peso	COP	0.019 INR
+Peruvian Sol	PEN	17.95 INR
+Paraguayan Guaraní	PYG	0.011 INR
+Uruguayan Peso	UYU	1.72 INR
+Venezuelan Bolívar	VEF	0.000000000184327 INR
+United States Dollar	USD	73.58 INR
+Canadian Dollar	CAD	58.15 INR
+Aruban/Dutch Guilder	AWG	40.86 INR
+Bajan Dollar	BBD	36.45 INR
+Bermudian Dollar	BMD	73.58 INR
+Bahamian Dollar	BSD	73.56 INR
+Dominican Peso	DOP	1.29 INR
+Jamaican Dollar	JMD	0.49 INR
+Mexican Peso	MXN	3.69 INR
+South African Rand	ZAR	5.20 INR
+Egyptian Pound	EGP	4.68 INR
+Ghanian Cedi	GHS	12.32 INR
+Gambian Dalasi	GMD	1.44 INR
+Kenyan Shilling	KES	0.67 INR
+Moroccan Dirham	MAD	8.23 INR
+Mauritian Rupee	MUR	1.74 INR
+Namibian Dollar	NAD	4.49 INR
+Nigerian Naira	NGN	0.18 INR
+Seychellois Rupee	SCR	5.77 INR
+Tunisian Dinar	TND	26.37 INR
+Ugandan Shilling	UGX	0.021 INR
+CFA Franc	XAF	0.13 INR
+Australian Dollar	AUD	54.27 INR
+Fijian Dollar	FJD	35.46 INR
+New Zealand Dollar	NZD	52.38 INR
+CPF Franc	XPF	0.72 INR
+
+*/
+			}
+		}
+	}
+</script>
+</html>
